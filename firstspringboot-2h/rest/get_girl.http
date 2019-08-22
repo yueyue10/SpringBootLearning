@@ -1,0 +1,11 @@
+POST http://localhost:8081/springboot/girls/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-08-22T051242.200.json
+<> 2019-08-22T051225.200.json
+<> 2019-08-22T051220.200.json
+<> 2019-08-22T051208.200.json
+
+###
+

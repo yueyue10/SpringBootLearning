@@ -1,0 +1,6 @@
+GET http://localhost:8081/springboot/girls/age/0?cupSize=33c&age=00
+Accept: */*
+Cache-Control: no-cache
+
+###
+

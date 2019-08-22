@@ -29,11 +29,11 @@ public class HelloController {
     private GirlProperties girlProperties;
 
     //访问/hello或者/hi任何一个地址，都会返回一样的结果
-    @RequestMapping(value = {"/hello","/hi"},method = RequestMethod.GET)
+    @RequestMapping(value = {"/hello", "/hi"}, method = RequestMethod.GET)
     //等价于@GetMaping(value="/hello")
     //如果是POST请求，则等价于@PostMapping
-    public String say(){
+    public String say() {
+        return girlProperties.toString();
 //        return cupSize+age+content;
-        return girlProperties.getCupSize();
     }
 }

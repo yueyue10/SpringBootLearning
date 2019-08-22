@@ -1,0 +1,10 @@
+POST http://localhost:8081/springboot/girls?cupSize=34&age=56
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-08-22T050622.200.json
+<> 2019-08-22T050547.200.json
+<> 2019-08-22T042524.200.json
+
+###
+

@@ -1,0 +1,6 @@
+PUT http://localhost:8081/springboot/girls/1?cupSize=33c&age=00
+Accept: */*
+Cache-Control: no-cache
+
+###
+
