@@ -11,8 +11,8 @@ https://blog.csdn.net/forezp/article/details/61472783
 
 利用idea测试接口
 Tools -> Http Client -> Test RESTFul Web Server
-![rest1.png](https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h/rest/rest1.png)
-![rest2.png](https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h/rest/rest2.png)
+![rest1.png](https://raw.githubusercontent.com/yueyue10/SpringBootLearning/master/firstspringboot-2h/rest/rest1.png)
+![rest2.png](https://raw.githubusercontent.com/yueyue10/SpringBootLearning/master/firstspringboot-2h/rest/rest2.png)
 
 基础介绍：
 ---
