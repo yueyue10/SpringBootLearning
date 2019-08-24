@@ -26,11 +26,12 @@
 	</properties>
 
 	<dependencies>
+		<!--添加jpa依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		<!--添加mysql连接类和连接池类：-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -40,7 +41,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,6 +57,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>

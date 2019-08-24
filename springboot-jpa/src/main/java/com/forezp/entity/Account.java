@@ -3,11 +3,13 @@ package com.forezp.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by fangzhipeng on 2017/4/20.
  */
 @Entity
+@Table(name = "`account-new`")
 public class Account {
     @Id
     @GeneratedValue
