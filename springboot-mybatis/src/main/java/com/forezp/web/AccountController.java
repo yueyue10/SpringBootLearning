@@ -30,38 +30,33 @@ public class AccountController {
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public String updateAccount(@PathVariable("id") int id, @RequestParam(value = "name", required = true) String name,
                                 @RequestParam(value = "money", required = true) double money) {
-        int t= accountService.update(name,money,id);
-        if(t==1) {
+        int t = accountService.update(name, money, id);
+        if (t == 1) {
             return "success";
-        }else {
+        } else {
             return "fail";
         }
-
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String delete(@PathVariable(value = "id")int id) {
-        int t= accountService.delete(id);
-        if(t==1) {
+    public String delete(@PathVariable(value = "id") int id) {
+        int t = accountService.delete(id);
+        if (t == 1) {
             return "success";
-        }else {
+        } else {
             return "fail";
         }
-
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String postAccount(@RequestParam(value = "name") String name,
                               @RequestParam(value = "money") double money) {
-
-       int t= accountService.add(name,money);
-       if(t==1) {
-           return "success";
-       }else {
-           return "fail";
-       }
-
+        int t = accountService.add(name, money);
+        if (t == 1) {
+            return "success";
+        } else {
+            return "fail";
+        }
     }
-
 
 }
