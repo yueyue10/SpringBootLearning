@@ -15,30 +15,25 @@ public class UserController {
      * @api {get} /user/:id  获取用户信息
      * @apiName GetUser
      * @apiGroup User
-     *
      * @apiParam {Number} id Users unique ID.
-     *
      * @apiSuccess {String} firstname Firstname of the User.
      * @apiSuccess {String} lastname  Lastname of the User.
-     *
      * @apiSuccessExample Success-Response:
-     *     HTTP/1.1 200 OK
-     *     {
-     *       "firstname": "John",
-     *       "lastname": "Doe"
-     *     }
-     *
+     * HTTP/1.1 200 OK
+     * {
+     * "firstname": "John",
+     * "lastname": "Doe"
+     * }
      * @apiError UserNotFound The id of the User was not found.
-     *
      * @apiErrorExample Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
+     * HTTP/1.1 404 Not Found
+     * {
+     * "error": "UserNotFound"
+     * }
      */
-    @RequestMapping (value = "/{id}",method = RequestMethod.GET)
-    public String getUser(@PathVariable(name = "id")long  id){
-            return "用户id为"+id;
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String getUser(@PathVariable(name = "id") long id) {
+        return "用户id为" + id;
     }
 
 
@@ -46,30 +41,25 @@ public class UserController {
      * @api {get} /user/:id Request User information
      * @apiName GetUser
      * @apiGroup User
-     *
      * @apiParam {Number} id Users unique ID.
-     *
      * @apiSuccess {String} firstname Firstname of the User.
      * @apiSuccess {String} lastname  Lastname of the User.
-     *
      * @apiSuccessExample Success-Response:
-     *     HTTP/1.1 200 OK
-     *     {
-     *       "firstname": "John",
-     *       "lastname": "Doe"
-     *     }
-     *
+     * HTTP/1.1 200 OK
+     * {
+     * "firstname": "John",
+     * "lastname": "Doe"
+     * }
      * @apiError UserNotFound The id of the User was not found.
-     *
      * @apiErrorExample Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
+     * HTTP/1.1 404 Not Found
+     * {
+     * "error": "UserNotFound"
+     * }
      */
-    @RequestMapping (value = "/{id}",method = RequestMethod.PUT)
-    public String updateUserName(@PathVariable(name = "id")long  id, String name){
-        return "用户id为"+id+",name:"+name;
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public String updateUserName(@PathVariable(name = "id") long id, String name) {
+        return "用户id为" + id + ",name:" + name;
     }
 
 
@@ -83,8 +73,7 @@ public class UserController {
      * @apiParam {String} mobile 手机号
      * @apiParam {int} vip = 0  是否注册Vip身份 0 普通用户 1 Vip用户
      * @apiParam {String} [recommend] 邀请码
-     * @apiParamExample {json} 请求样例：
-     *                ?account=sodlinken&password=11223344&mobile=13739554137&vip=0&recommend=
+     * @apiParamExample {json} 请求样例：?account=sodlinken&password=11223344&mobile=13739554137&vip=0&recommend=
      * @apiSuccess (200) {String} msg 信息
      * @apiSuccess (200) {int} code 0 代表无错误 1代表有错误
      * @apiSuccessExample {json} 返回样例:
@@ -98,8 +87,7 @@ public class UserController {
      * @apiDescription 用于用户登录
      * @apiParam {String} userName 用户名
      * @apiParam {String} password 密码
-     * @apiParamExample {json} 请求样例：
-     *                ?userName=张三&password=11223344
+     * @apiParamExample {json} 请求样例：?userName=张三&password=11223344
      * @apiSuccess (200) {String} msg 信息
      * @apiSuccess (200) {String} code 0 代表无错误 1代表有错误
      * @apiSuccess (200) {String} user 用户信息
@@ -157,7 +145,6 @@ public class UserController {
      * @apiParam (200) {String} [address] 家庭住址
      * @apiSuccess (200) {String} msg 信息
      * @apiSuccess (200) {int} code 0 代表无错误 1代表有错误
-     * @apiSuccessExample {json} 返回样例:
-     *                {"code":"0","msg":"修改成功"}
+     * @apiSuccessExample {json} 返回样例:{"code":"0","msg":"修改成功"}
      */
 }
