@@ -18,6 +18,7 @@ SpringBoot学习
 | springboot-restdocs     |         [ 第十篇： 用spring Restdocs创建API文档][10]            |
 | springboot-swagger      |         [ 第十一篇：springboot集成swagger2][11]            |
 | springboot-aipdoc       |         [ 第十二篇：springboot集成apidoc][12]            |
+| springboot-cacahe-data-with-spring      |         [  第十三篇：springboot集成spring cache][13]            |
 
 [1]:https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h
 [2]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-config
@@ -31,4 +32,5 @@ SpringBoot学习
 [10]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-restdocs
 [11]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-swagger
 [12]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-aipdoc 
+[13]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-cacahe-data-with-spring
 
