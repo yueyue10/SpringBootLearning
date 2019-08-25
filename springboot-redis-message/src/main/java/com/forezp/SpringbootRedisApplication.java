@@ -3,6 +3,7 @@ package com.forezp;
 import com.forezp.message.Receiver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.util.concurrent.CountDownLatch;
 
 import org.slf4j.Logger;
@@ -18,53 +19,56 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 @SpringBootApplication
 public class SpringbootRedisApplication {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootRedisApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootRedisApplication.class);
 
-	@Bean
-	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,MessageListenerAdapter listenerAdapter) {
-		RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-		container.setConnectionFactory(connectionFactory);
-		container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
-		return container;
-	}
+    //	注入消息监听容器
+    @Bean
+    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
+        return container;
+    }
 
-	@Bean
-	MessageListenerAdapter listenerAdapter(Receiver receiver) {
-		return new MessageListenerAdapter(receiver, "receiveMessage");
-	}
+    @Bean
+    MessageListenerAdapter listenerAdapter(Receiver receiver) {
+        return new MessageListenerAdapter(receiver, "receiveMessage");
+    }
 
-	@Bean
-	Receiver receiver(CountDownLatch latch) {
-		return new Receiver(latch);
-	}
+    //	注入消息接收者
+    @Bean
+    Receiver receiver(CountDownLatch latch) {
+        return new Receiver(latch);
+    }
 
-	@Bean
-	CountDownLatch latch() {
-		return new CountDownLatch(1);
-	}
+    @Bean
+    CountDownLatch latch() {
+        return new CountDownLatch(1);
+    }
 
-	@Bean
-	StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
-		return new StringRedisTemplate(connectionFactory);
-	}
+    //注入StringRedisTemplate
+    @Bean
+    StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
+        return new StringRedisTemplate(connectionFactory);
+    }
 
-	public static void main(String[] args) throws Exception{
-		ApplicationContext ctx =  SpringApplication.run(SpringbootRedisApplication.class, args);
+    public static void main(String[] args) throws Exception {
+        ApplicationContext ctx = SpringApplication.run(SpringbootRedisApplication.class, args);
 
-		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
-		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
+        StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
+        CountDownLatch latch = ctx.getBean(CountDownLatch.class);
 
-		LOGGER.info("Sending message...");
-		template.convertAndSend("chat", "Hello from Redis!");
+        LOGGER.info("Sending message...");
+        template.convertAndSend("chat", "Hello from Redis!");
 
-		latch.await();
+        latch.await();
 
-		System.exit(0);
-	}
+        System.exit(0);
+    }
 
 
-	/**
-	 * 2017-04-20 17:25:15.536  INFO 39148 --- [           main] com.forezp.SpringbootRedisApplication    : Sending message...
-	 *  2017-04-20 17:25:15.544  INFO 39148 --- [    container-2] com.forezp.message.Receiver              : Received <Hello from Redis!>
-	 */
+    /**
+     * 2017-04-20 17:25:15.536  INFO 39148 --- [           main] com.forezp.SpringbootRedisApplication    : Sending message...
+     *  2017-04-20 17:25:15.544  INFO 39148 --- [    container-2] com.forezp.message.Receiver              : Received <Hello from Redis!>
+     */
 }
