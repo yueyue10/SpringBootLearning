@@ -16,6 +16,7 @@ SpringBoot学习
 | springboot-mongodb      |         [ 第八篇：springboot整合mongodb][8]            |
 | springboot-redis-message     |         [ 第九篇： springboot整合Redis][9]            |
 | springboot-restdocs     |         [ 第十篇： 用spring Restdocs创建API文档][10]            |
+| springboot-swagger      |         [ 第十一篇：springboot集成swagger2][11]            |
 
 [1]:https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h
 [2]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-config
@@ -25,4 +26,6 @@ SpringBoot学习
 [6]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-mybatis
 [7]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-mybatis-tx
 [8]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-mongodb
-[9]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-restdocs
+[9]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-redis-message
+[10]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-restdocs
+[11]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-swagger
