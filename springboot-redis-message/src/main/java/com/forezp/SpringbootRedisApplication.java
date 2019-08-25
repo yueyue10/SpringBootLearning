@@ -21,13 +21,10 @@ public class SpringbootRedisApplication {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootRedisApplication.class);
 
 	@Bean
-	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
-											MessageListenerAdapter listenerAdapter) {
-
+	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,MessageListenerAdapter listenerAdapter) {
 		RedisMessageListenerContainer container = new RedisMessageListenerContainer();
 		container.setConnectionFactory(connectionFactory);
 		container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
-
 		return container;
 	}
 
