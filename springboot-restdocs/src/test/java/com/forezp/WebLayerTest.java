@@ -31,4 +31,12 @@ public class WebLayerTest {
                 .andExpect(content().string(containsString("Hello World")))
                 .andDo(document("home"));
     }
+
+    @Test
+    public void testString() throws Exception {
+        this.mockMvc.perform(get("/test?string=cc"))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("hello cc")))
+                .andDo(document("test"));
+    }
 }

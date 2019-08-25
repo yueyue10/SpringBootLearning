@@ -8,4 +8,10 @@ include::{snippets}/home/http-request.adoc[]
 .response
 include::{snippets}/home/http-response.adoc[]
 
+.request
+include::{snippets}/test/http-request.adoc[]
+
+.response
+include::{snippets}/test/http-response.adoc[]
+
 这个例子非常简单，通过单元测试和一些简单的配置就能够得到api文档了。

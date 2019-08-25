@@ -3,8 +3,7 @@ package com.forezp.web;
 import java.util.Collections;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HomeController {
@@ -14,4 +13,8 @@ public class HomeController {
         return Collections.singletonMap("message", "Hello World");
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(@RequestParam(value = "string") String string) {
+        return "hello " + string;
+    }
 }
