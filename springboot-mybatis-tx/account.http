@@ -1,0 +1,33 @@
+## 列表
+GET http://localhost:8080/account/list
+## 添加
+#POST http://localhost:8080/account?name=akl&money=534
+## 查看
+#GET http://localhost:8080/account/1
+## 修改
+#PUT http://localhost:8080/account/1?name=akl&money=534
+## 删除
+#DELETE http://localhost:8080/account/1
+## transfer
+#GET http://localhost:8080/account/transfer
+
+##
+Accept: */*
+Cache-Control: no-cache
+
+<<> 2019-08-25T083740.200.txt
+> 2019-08-25T083723.200.json
+
+<> 2019-08-25T103905.200.json
+<> 2019-08-25T103806.500.json
+<> 2019-08-25T103601.200.json
+<> 2019-08-25T084008.200.json
+<> 2019-08-25T084001.200.txt
+<> 2019-08-25T083932.200.json
+<> 2019-08-25T083921.200.txt
+<> 2019-08-25T083910.200.json
+<> 2019-08-25T083857.200.json
+<> 2019-08-25T083822.400.html
+<> 2019-08-25T083809.400.html
+
+###

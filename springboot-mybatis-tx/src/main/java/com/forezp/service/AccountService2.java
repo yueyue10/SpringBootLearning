@@ -14,10 +14,10 @@ public class AccountService2 {
     @Autowired
     AccountMapper2 accountMapper2;
 
-    @Transactional
+    @Transactional //这个注解相当于在方法没有异常的时候才会操作数据库，否则不会操作数据库
     public void transfer() throws RuntimeException{
         accountMapper2.update(90,1);//用户1减10块 用户2加10块
-        int i=1/0;
         accountMapper2.update(110,2);
+        int i=1/0;
     }
 }
