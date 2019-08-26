@@ -23,6 +23,7 @@ SpringBoot学习
 | springboot-rabbitmq           |         [  第十五篇：Springboot整合RabbitMQ][14]            |
 | springboot-resttemplate       |         [  第十六篇：用restTemplate消费服务 ][15]            |
 | springboot-upload-file        |         [  第十七篇：上传文件 ][16]            |
+| springboot-scheduling-tasks   |         [  第十八篇： 定时任务（Scheduling Tasks） ][17]            |
 
 [1]:https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h
 [2]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-config
@@ -40,4 +41,5 @@ SpringBoot学习
 [14]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-rabbitmq
 [15]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-resttemplate
 [16]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-upload-file
+[17]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-scheduling-tasks
 
