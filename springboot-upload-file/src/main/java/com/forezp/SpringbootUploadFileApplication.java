@@ -1,7 +1,7 @@
 package com.forezp;
 
 import com.forezp.storage.StorageProperties;
-import com.forezp.storage.StorageService;
+import com.forezp.service.StorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

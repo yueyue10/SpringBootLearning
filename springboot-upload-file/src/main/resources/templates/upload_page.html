@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/">
+        <table>
+            <tr>
+                <td>File to upload:</td>
+                <td><input type="file" name="up_file"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="上传"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <p>
+        文件列表：
+    </p>
+    <ul>
+        <!--遍历file_list里面的file进行展示-->
+        <li th:each="file : ${file_list}">
+            <a th:href="${file}" th:text="${file}"/>
+            <!--需要使用model层的数据时，在html标签的属性前面加th-->
+            <img th:src="${file}"/>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ package com.forezp.web;
 
 
 import com.forezp.storage.StorageFileNotFoundException;
-import com.forezp.storage.StorageService;
+import com.forezp.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -31,39 +31,33 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
+    //加载所有文件
     @GetMapping("/")
     public String listUploadedFiles(Model model) throws IOException {
-
-        model.addAttribute("files", storageService
-                .loadAll()
-                .map(path ->
-                        MvcUriComponentsBuilder
-                                .fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
-                                .build().toString())
-                .collect(Collectors.toList()));
-
-        return "uploadForm";
+        model.addAttribute("file_list",
+                storageService.loadAll()
+                        .map(path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString()).build().toString())
+                        .collect(Collectors.toList()));
+        return "upload_page";
     }
 
+    //通过文件路径返回文件的HTTP响应结果
+    //传入filename路径参数，.+是正则表达式
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-
         Resource file = storageService.loadAsResource(filename);
         return ResponseEntity
                 .ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+file.getFilename()+"\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
                 .body(file);
     }
 
+    //保存文件逻辑
     @PostMapping("/")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file,
-                                   RedirectAttributes redirectAttributes) {
-
+    public String handleFileUpload(@RequestParam("up_file") MultipartFile file, RedirectAttributes redirectAttributes) {
         storageService.store(file);
-        redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
-
+        redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename() + "!");
         return "redirect:/";
     }
 

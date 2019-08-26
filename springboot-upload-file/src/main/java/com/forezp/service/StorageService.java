@@ -1,4 +1,4 @@
-package com.forezp.storage;
+package com.forezp.service;
 
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,9 +8,9 @@ import java.util.stream.Stream;
 
 public interface StorageService {
 
-    void init();
+    void deleteAll();
 
-    void store(MultipartFile file);
+    void init();
 
     Stream<Path> loadAll();
 
@@ -18,6 +18,6 @@ public interface StorageService {
 
     Resource loadAsResource(String filename);
 
-    void deleteAll();
+    void store(MultipartFile file);
 
 }
