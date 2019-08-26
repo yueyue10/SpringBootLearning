@@ -21,6 +21,7 @@ SpringBoot学习
 | springboot-cacahe-data-with-spring      |         [  第十三篇：springboot集成spring cache][13]            |
 | springboot-redis-message      |         [  第十四篇：在springboot中用redis实现消息队列][9]            |
 | springboot-rabbitmq           |         [  第十五篇：Springboot整合RabbitMQ][14]            |
+| springboot-resttemplate       |         [  第十六篇：用restTemplate消费服务 ][15]            |
 
 [1]:https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h
 [2]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-config
@@ -36,4 +37,5 @@ SpringBoot学习
 [12]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-aipdoc 
 [13]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-cacahe-data-with-spring
 [14]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-rabbitmq
+[15]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-resttemplate
 

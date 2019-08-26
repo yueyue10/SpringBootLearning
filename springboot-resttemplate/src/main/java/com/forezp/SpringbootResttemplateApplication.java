@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class SpringbootResttemplateApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(SpringbootResttemplateApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(SpringbootResttemplateApplication.class);
 
 //	public static void main(String args[]) {
 //		RestTemplate restTemplate = new RestTemplate();
@@ -21,21 +21,20 @@ public class SpringbootResttemplateApplication {
 //		log.info(quote.toString());
 //	}
 
-	public static void main(String args[]) {
-		SpringApplication.run(SpringbootResttemplateApplication.class);
-	}
+    public static void main(String args[]) {
+        SpringApplication.run(SpringbootResttemplateApplication.class);
+    }
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
 
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
-			String quote = restTemplate.getForObject(
-					"http://gturnquist-quoters.cfapps.io/api/random", String.class);
-			log.info(quote.toString());
-		};
-	}
+    @Bean
+    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+        return args -> {
+            String quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", String.class);
+            log.info(quote.toString());
+        };
+    }
 }
