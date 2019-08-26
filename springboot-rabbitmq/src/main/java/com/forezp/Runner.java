@@ -16,8 +16,7 @@ public class Runner implements CommandLineRunner {
     private final Receiver receiver;
     private final ConfigurableApplicationContext context;
 
-    public Runner(Receiver receiver, RabbitTemplate rabbitTemplate,
-                  ConfigurableApplicationContext context) {
+    public Runner(Receiver receiver, RabbitTemplate rabbitTemplate, ConfigurableApplicationContext context) {
         this.receiver = receiver;
         this.rabbitTemplate = rabbitTemplate;
         this.context = context;

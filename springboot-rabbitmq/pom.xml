@@ -25,6 +25,7 @@
 	</properties>
 
 	<dependencies>
+		<!--添加amqp依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
@@ -45,6 +46,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
