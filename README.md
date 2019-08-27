@@ -26,6 +26,7 @@ SpringBoot学习
 | springboot-scheduling-tasks   |         [  第十八篇： 定时任务（Scheduling Tasks） ][17]            |
 | springboot-validate-form      |         [  第十九篇： 验证表单信息 ][18]            |
 | springboot-handling-form-submission      |         [  第二十篇： 处理表单提交 ][19]            |
+| springboot-jms      |         [  第二十一篇： springboot集成JMS ][20]            |
 
 [1]:https://github.com/yueyue10/SpringBootLearning/tree/master/firstspringboot-2h
 [2]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-config
@@ -46,4 +47,5 @@ SpringBoot学习
 [17]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-scheduling-tasks
 [18]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-validate-form
 [19]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-handling-form-submission
+[20]:https://github.com/yueyue10/SpringBootLearning/tree/master/springboot-jms
 
