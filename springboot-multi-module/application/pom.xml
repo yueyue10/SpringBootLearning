@@ -40,7 +40,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
+		<!--依赖libary库-->
 		<dependency>
 			<groupId>com.forezp</groupId>
 			<artifactId>libary</artifactId>

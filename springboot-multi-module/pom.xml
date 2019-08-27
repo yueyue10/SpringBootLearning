@@ -7,9 +7,9 @@
 	<artifactId>springboot-multi-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
 	<name>springboot-multi-module</name>
 	<description>Demo project for Spring Boot</description>
-
 
 	<modules>
 		<module>libary</module>

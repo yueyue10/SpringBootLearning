@@ -2,10 +2,17 @@
 
 参考：
 https://blog.csdn.net/forezp/article/details/71023752
+https://www.cnblogs.com/clwydjgs/p/9255046.html
 
 本文出自方志朋的博客
 
 在springboot工程作为服务器，去接收通过http 上传的multi-file的文件。
+
+> 新学的的知识：
+>
+> [@Controller和@RestController的区别？][10]
+>
+> 在该项目中有使用@Controller返回html界面。
 
 > 其他相关知识：
 >> springboot如何使用velocity模版引擎
@@ -45,12 +52,12 @@ https://blog.csdn.net/forezp/article/details/71023752
                     * 具体先通过storageService.loadAll()得到所有文件路径Path的Stream流
                     * 再通过Stream的map->serveFile 将Path数据处理成Http响应数据
                     * 再通过Stream的collect方法将数据处理成数据集合
-                * 提供文件操作html页面配置(~~猜测应该是传入Model后识别到该方法功能的~~)
+                * 提供文件操作html页面配置(因为该controller类使用的是@Controller注解，所以返回是一个html或者jsp界面)
             * 编写handleFileUpload()方法
                 * 实现文件上传的业务逻辑
                     * 保存文件到本地
                     * 刷新界面并提供message信息
-                * 实现html中"上传"按钮点击之后的逻辑(~~猜测是@Controller类注解、@PostMapping("/")方法注解、 return "redirect:/";共同影响所致。~~)
+                * 实现html中"上传"按钮点击之后的逻辑(因为该controller类使用的是@Controller注解，所以返回一个html或者jsp界面)
     * 编写Application代码
         * 使用注解@EnableConfigurationProperties(StorageProperties.class)，使用配置类
         * 注册CommandLineRunner类，在run方法里面删除文件及创建文件夹
@@ -77,3 +84,4 @@ https://blog.csdn.net/forezp/article/details/71023752
 [7.2]:https://www.runoob.com/regexp/regexp-syntax.html
 [8]:https://www.w3school.com.cn/tags/tag_li.asp
 [9]:https://www.e-learn.cn/thymeleaf
+[10]:https://www.cnblogs.com/clwydjgs/p/9255046.html
