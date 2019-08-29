@@ -1,11 +1,14 @@
 # 第二十四篇： springboot整合docker
 
 参考：
+
 https://blog.csdn.net/forezp/article/details/71024219
+
 https://www.runoob.com/docker/docker-tutorial.html
+
 https://www.cnblogs.com/hei12138/p/ideausedocker.html
 
-和上面的类似：https://www.cnblogs.com/shamo89/p/9201513.html
+~~和上面的类似：https://www.cnblogs.com/shamo89/p/9201513.html~~
 
 本文出自方志朋的博客
 
