@@ -2,8 +2,5 @@ GET http://localhost:8081/springboot/girls
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-08-22T051414.200.json
-<> 2019-08-22T050651.200.json
-
 ###
 

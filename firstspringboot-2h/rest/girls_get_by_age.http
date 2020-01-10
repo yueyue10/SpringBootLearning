@@ -1,0 +1,6 @@
+GET http://localhost:8081/springboot/girls/age/56
+Accept: */*
+Cache-Control: no-cache
+
+###
+

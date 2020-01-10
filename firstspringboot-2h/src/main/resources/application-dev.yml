@@ -2,8 +2,12 @@ server:
   port: 8080
   context-path: /springboot
 
+cupSize1: F
+age1: 18
+content1: content:${cupSize1},age:${age1}
+
 girl:
   cupSize: B
-  age: 18
+  age: 20
   content: content:${cupSize},age:${age}
 

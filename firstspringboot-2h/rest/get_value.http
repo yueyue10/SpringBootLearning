@@ -1,0 +1,6 @@
+GET http://localhost:8081/springboot/getvalue
+Accept: */*
+Cache-Control: no-cache
+
+###
+

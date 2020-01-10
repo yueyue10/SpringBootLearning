@@ -1,6 +1,7 @@
 package com.forezp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,15 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController     //等同于同时加上了@Controller和@ResponseBody
 public class HelloController {
 
-//    //导入配置文件中的cupSize
-//    @Value("${cupSize}")
-//    private String cupSize;
-//
-//    @Value("${age}")
-//    private Integer age;
-//
-//    @Value("${content}")
-//    private String content;
+    //导入配置文件中的cupSize
+    @Value("${cupSize1}")
+    private String cupSize;
+
+    @Value("${age1}")
+    private Integer age;
+
+    @Value("${content1}")
+    private String content;
 
     @Autowired
     private GirlProperties girlProperties;
@@ -34,6 +35,13 @@ public class HelloController {
     //如果是POST请求，则等价于@PostMapping
     public String say() {
         return girlProperties.toString();
-//        return cupSize+age+content;
+    }
+
+    @RequestMapping(value = {"/getvalue"}, method = RequestMethod.GET)
+    public String getValue() {
+        return "--GirlProperties{" +
+                "cupSize='" + cupSize + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

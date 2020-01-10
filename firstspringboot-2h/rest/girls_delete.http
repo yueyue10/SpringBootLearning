@@ -1,0 +1,6 @@
+DELETE http://localhost:8081/springboot/girls/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+
