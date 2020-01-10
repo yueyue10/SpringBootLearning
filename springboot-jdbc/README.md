@@ -26,6 +26,11 @@ https://blog.csdn.net/forezp/article/details/70477821
         ```
 * 通过Controller将接口暴露给用户
 
+#### 总结来讲
+* controller层是对外暴露的
+* service层是接口定义类 -> 是对controller的功能及逻辑的实现。
+* dao层是数据库操作层 -> 是对service的内部实现。
+
 二、项目配置
 ---
 
@@ -41,12 +46,24 @@ https://blog.csdn.net/forezp/article/details/70477821
 ```
 
 #### 2.具体编码
-    * 创建实体类Account 
-    * 编写dao层代码
-    * 编写service层代码
-    * 构建一组restful api来展示
+* 创建实体类Account 
+* 编写dao层代码
+* 编写service层代码
+* 编写controller层代码
+* 构建一组restful api来展示
     
-三、个人发现知识
+三、启动服务，测试各接口
+---
+
+| 接口名称               |  REST文件            |        接口地址           |
+| --------              |  :----:             |        :----:             |
+| 获取account列表接口    |  [account_list](rest/account_list.http)  |GET http://localhost:8080/account/list             |
+| 根据id获取account的接口	|  [account_get](rest/account_get.http)  | GET http://localhost:8080/account/1             |
+| 添加account接口	    |  [account_add](rest/account_add.http)  | POST http://localhost:8080/account?name=asdf&money=322            |
+| 更新account接口	    |  [account_list](rest/account_update.http)  | PUT http://localhost:8080/account/1?name=yyy&money=12           |
+| 删除account接口	    |  [account_delete](rest/account_delete.http)  | GET http://localhost:8080/account/delete?id=4           |
+
+四、个人发现知识
 ---
 
 #### 利用Idea开发工具连接MySql数据库：
@@ -85,6 +102,7 @@ ___遇到连接数据库失败的问题。后定位问题为url配置错误___
 ![sql_step3.jpg](mysql/sql_step3.jpg)
 
 > 步骤四：执行结果可以在下方控制台看到。
+
 ![sql_step4.jpg](mysql/sql_step4.jpg)
 
  
