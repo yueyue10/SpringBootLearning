@@ -29,25 +29,28 @@ beatlsql 优点
     * 支持跨数据库平台，开发者所需工作减少到最小，目前跨数据库支持mysql,postgres,oracle,sqlserver,h2,sqllite,DB2.
 
 
-项目配置
+一、项目配置
 ---
 
-* pom文件配置
-    * 在pom文件引入spring-boot-devtools
-    * 在pom文件引入beetl、beetlsql、mysql-connector-java
-    * 在pom文件引入web服务：spring-boot-starter-web
-* Application.class文件配置
-    * 导入相关的bean
-    * 数据源
-    * 事物管理器
-* 配置resource下的文件
-    * 创建META_INF文件夹，文件夹中加入spring-devtools.properties。并添加jar包
-    * 创建templates文件夹，并创建index.btl
-* 具体编码
-    * 创建实体类Account
-    * 编写dao层代码
-        * 继承BaseMapper，就能获取单表查询的一些性质，当你需要自定义sql的时候，只需要在resources/sql/account.md文件下书写文件：
-    * 编写service层代码
-    * 构建一组restful api来展示
+#### 一、pom文件配置
+* 在pom文件引入spring-boot-devtools
+* 在pom文件引入beetl、beetlsql、mysql-connector-java
+* 在pom文件引入web服务：spring-boot-starter-web
+
+#### 二、Application.class文件配置
+* 导入相关的bean
+* 数据源
+* 事物管理器
+
+#### 三、配置resource下的文件
+* 创建META_INF文件夹，文件夹中加入spring-devtools.properties。并添加jar包
+* 创建templates文件夹，并创建index.btl
+
+#### 四、具体编码
+* 创建实体类Account
+* 编写dao层代码
+    * 继承BaseMapper，就能获取单表查询的一些性质，当你需要自定义sql的时候，只需要在resources/sql/account.md文件下书写文件：
+* 编写service层代码
+* 构建一组restful api来展示
  
 
