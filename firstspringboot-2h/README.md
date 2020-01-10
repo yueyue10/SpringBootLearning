@@ -63,12 +63,11 @@ public class HelloController {
     * @Controller则一般是return的jsp,html页面。用于网页返回
 * @RequestMapping(value = {"/hello","/hi"},method = RequestMethod.GET) 
     * 访问/hello或者/hi任何一个地址，都会返回一样的结果
-* ***运行 Application的main(),程序会启动。打开浏览器输入网址：localhost:8080/springboot/hi***
 
 三、全局对象的配置使用过程
 ---
-#### 在application.yml中配置girl(代码在上面)
-#### 在代码中创建GirlProperties类与之关联
+#### 1.在application.yml中配置girl(代码在上面)
+#### 2.在代码中创建GirlProperties类与之关联
 
 ```
 @ConfigurationProperties(prefix="girl")
@@ -80,10 +79,10 @@ public class GirlProperties {
     ...
 }
 ```
-#### GirlProperties类解析
-* 通过ConfigurationProperties注解，将属性注入到bean中
-* 通过Component注解将bean注解到spring容器中：
-#### 在代码中使用application.yml中定义的对象值.
+* GirlProperties类解析
+    * 通过ConfigurationProperties注解，将属性注入到bean中
+    * 通过Component注解将bean注解到spring容器中：
+#### 3.在代码中使用application.yml中定义的对象值.
 >在代码中定义GirlProperties属性，并使用@Autowired注解来获取到application.yml中的对象值
 ```
 @Autowired
@@ -93,7 +92,7 @@ private GirlProperties girlProperties;
 四、jpa方式操作数据库
 ---
 
-#### 在pom中添加依赖
+#### 1.在pom中添加依赖
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -106,7 +105,7 @@ private GirlProperties girlProperties;
 </dependency>
 ```
 
-#### 在application.yml中添加数据库配置和jpa配置：
+#### 2.在application.yml中添加数据库配置和jpa配置：
 ```
 spring:
   datasource:
@@ -115,10 +114,10 @@ spring:
       ddl-auto: create
     show-sql: true
 ```
-> 其中ddl_auto: create 代表在数据库创建表，update 代表更新，
->>   * 首次启动需要create ,如果你想通过hibernate 注解的方式创建数据库的表的话，之后需要改为 update.
+* 其中ddl_auto: create 代表在数据库创建表，update 代表更新，
+   * 首次启动需要create ,如果你想通过hibernate 注解的方式创建数据库的表的话，之后需要改为 update.
 
-#### 创建一个实体girl，这是基于hibernate的:
+#### 3.创建一个实体girl，这是基于hibernate的:
 ```
 @Entity
 public class Girl {
@@ -133,14 +132,14 @@ public class Girl {
     }
     ...
 ```
-#### 创建Dao接口, springboot 将接口类会自动注解到spring容器中，不需要我们做任何配置。
+#### 4.创建Dao接口, springboot 将接口类会自动注解到spring容器中，不需要我们做任何配置。
 >只需要继承JpaRepository 即可：
 ```
 //其中第二个参数为Id的类型
 public interface GirlRep extends JpaRepository<Girl,Integer>{
    }
 ```
-#### 创建controller类
+#### 5.创建controller类
 >创建一个GirlController，写一个获取所有girl的api和添加girl的api ，自己跑一下就可以了:
 ```
 @RestController
