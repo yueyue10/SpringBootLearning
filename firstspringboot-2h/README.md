@@ -31,16 +31,16 @@ girl:
   age: 18
   content: content:${cupSize},age:${age}
 ```
-* application.yml文件解析
-    * 应用的端口为8081,应用的context-path为:[/springboot]：
-    ```server.context-path= # Context path of the application. 应用的上下文路径，也可以称为项目路径，是构成url地址的一部分。```
-    * profiles:active:指定不同环境的配置
-    * datasource和jpa分别关联数据库配置及数据表的创建配置
-    * application.yml里面定义的属性
-        * 在application.yml里面可以使用${xxx}获取到
-        * 在程序代码中可以通过给属性加注解@Value("${name}")获取到
-    * application.yml里面定义的对象如：girl
-        * 在代码中使用时，需要使用创建GirlProperties类...具体在下面介绍
+#### application.yml文件解析
+* 应用的端口为8081,应用的context-path为:[/springboot]：
+```server.context-path= # Context path of the application. 应用的上下文路径，也可以称为项目路径，是构成url地址的一部分。```
+* profiles:active:指定不同环境的配置
+* datasource和jpa分别关联数据库配置及数据表的创建配置
+* application.yml里面定义的属性
+    * 在application.yml里面可以使用${xxx}获取到
+    * 在程序代码中可以通过给属性加注解@Value("${name}")获取到
+* application.yml里面定义的对象如：girl
+    * 在代码中使用时，需要使用创建GirlProperties类...具体在下面介绍
     
 二、Controller介绍
 ---
@@ -56,18 +56,19 @@ public class HelloController {
     }
 }
 ```
-* Controller类解析
-    * @RestController介绍
-        * 等同于同时加上了@Controller和@ResponseBody
-        * 返回的内容就是方法的Return里的内容。用于接口数据返回
-        * @Controller则一般是return的jsp,html页面。用于网页返回
-    * @RequestMapping(value = {"/hello","/hi"},method = RequestMethod.GET) 
-        * 访问/hello或者/hi任何一个地址，都会返回一样的结果
-    * ***运行 Application的main(),程序会启动。打开浏览器输入网址：localhost:8080/springboot/hi***
+#### Controller类解析
+* @RestController介绍
+    * 等同于同时加上了@Controller和@ResponseBody
+    * 返回的内容就是方法的Return里的内容。用于接口数据返回
+    * @Controller则一般是return的jsp,html页面。用于网页返回
+* @RequestMapping(value = {"/hello","/hi"},method = RequestMethod.GET) 
+    * 访问/hello或者/hi任何一个地址，都会返回一样的结果
+* ***运行 Application的main(),程序会启动。打开浏览器输入网址：localhost:8080/springboot/hi***
 
 三、全局对象的配置使用过程
 ---
->在application.yml中配置girl，在代码中创建GirlProperties类与之关联
+#### 在application.yml中配置girl(代码在上面)
+#### 在代码中创建GirlProperties类与之关联
 
 ```
 @ConfigurationProperties(prefix="girl")
@@ -79,10 +80,11 @@ public class GirlProperties {
     ...
 }
 ```
-* GirlProperties类解析
-    * 通过ConfigurationProperties注解，将属性注入到bean中
-    * 通过Component注解将bean注解到spring容器中：
-> 在代码中定义GirlProperties属性，使用@Autowired注解来获取到application.yml中的对象值
+#### GirlProperties类解析
+* 通过ConfigurationProperties注解，将属性注入到bean中
+* 通过Component注解将bean注解到spring容器中：
+#### 在代码中使用application.yml中定义的对象值.
+>在代码中定义GirlProperties属性，并使用@Autowired注解来获取到application.yml中的对象值
 ```
 @Autowired
 private GirlProperties girlProperties;
@@ -91,7 +93,7 @@ private GirlProperties girlProperties;
 四、jpa方式操作数据库
 ---
 
->在pom中添加依赖
+#### 在pom中添加依赖
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -104,18 +106,19 @@ private GirlProperties girlProperties;
 </dependency>
 ```
 
-> 在application.yml中添加数据库配置：
+#### 在application.yml中添加数据库配置和jpa配置：
 ```
 spring:
+  datasource:
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
 ```
-* 其中ddl_auto: create 代表在数据库创建表，update 代表更新，
-    * 首次启动需要create ,如果你想通过hibernate 注解的方式创建数据库的表的话，之后需要改为 update.
+> 其中ddl_auto: create 代表在数据库创建表，update 代表更新，
+>>   * 首次启动需要create ,如果你想通过hibernate 注解的方式创建数据库的表的话，之后需要改为 update.
 
->创建一个实体girl，这是基于hibernate的:
+#### 创建一个实体girl，这是基于hibernate的:
 ```
 @Entity
 public class Girl {
@@ -130,15 +133,15 @@ public class Girl {
     }
     ...
 ```
->创建Dao接口, springboot 将接口类会自动注解到spring容器中，不需要我们做任何配置。
->>只需要继承JpaRepository 即可：
+#### 创建Dao接口, springboot 将接口类会自动注解到spring容器中，不需要我们做任何配置。
+>只需要继承JpaRepository 即可：
 ```
 //其中第二个参数为Id的类型
 public interface GirlRep extends JpaRepository<Girl,Integer>{
    }
 ```
->创建controller类
->>创建一个GirlController，写一个获取所有girl的api和添加girl的api ，自己跑一下就可以了:
+#### 创建controller类
+>创建一个GirlController，写一个获取所有girl的api和添加girl的api ，自己跑一下就可以了:
 ```
 @RestController
 public class GirlController {
