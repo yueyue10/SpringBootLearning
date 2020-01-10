@@ -7,7 +7,7 @@ https://blog.csdn.net/forezp/article/details/70477821
 
 ## 项目介绍：
 
-项目结构分析
+一、项目结构分析
 ---
 
 > Dao层是和数据库打交道的，Service层会封装具体的业务。有点抽象..
@@ -26,7 +26,7 @@ https://blog.csdn.net/forezp/article/details/70477821
         ```
 * 通过Controller将接口暴露给用户
 
-项目配置
+二、项目配置
 ---
 
 #### 1.项目pom和application.properties配置
@@ -46,7 +46,7 @@ https://blog.csdn.net/forezp/article/details/70477821
     * 编写service层代码
     * 构建一组restful api来展示
     
-个人发现知识
+三、个人发现知识
 ---
 
 #### 利用Idea开发工具连接MySql数据库：
@@ -60,7 +60,7 @@ https://blog.csdn.net/forezp/article/details/70477821
 ![mysql_setting.png](mysql/mysql_setting.jpg)
 ![add_mysql_connect.png](mysql/add_mysql_connect.jpg)
 
-**遇到连接数据库失败的问题。后定位问题为url配置错误**
+___遇到连接数据库失败的问题。后定位问题为url配置错误___
 
 `修改url为:jdbc:mysql://localhost:3306/db_spring?serverTimezone=GMT`
 
@@ -68,17 +68,23 @@ https://blog.csdn.net/forezp/article/details/70477821
 
 #### 2.利用idea操作MySql数据库
 
-右侧Database -> QL控制台按钮(Data Source Properties)
-* 步骤一：打开数据库控制台console
-* 步骤二：在控制台内编辑sql语句
-* 步骤三：选中sql语句，执行
-    * 方法一：点击左上角的Execute按钮
-    * 方法二：右击，选择列表中的Execute
-* 步骤四：执行结果可以在下方控制台看到。
+位置：右侧Database -> QL控制台按钮(Data Source Properties)
+
+>步骤一：打开数据库控制台console
 
 ![sql_step1.jpg](mysql/sql_step1.jpg)
+
+>步骤二：在控制台内编辑sql语句
+
 ![sql_step2.jpg](mysql/sql_step2.jpg)
+
+>步骤三：选中sql语句，执行
+* 方法一：点击左上角的Execute按钮
+* 方法二：右击，选择列表中的Execute
+
 ![sql_step3.jpg](mysql/sql_step3.jpg)
+
+> 步骤四：执行结果可以在下方控制台看到。
 ![sql_step4.jpg](mysql/sql_step4.jpg)
 
  
