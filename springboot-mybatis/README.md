@@ -21,7 +21,7 @@ https://blog.csdn.net/forezp/article/details/70768477
     * 编写dao层代码
         * 编写AccountMapper接口即可，不需要实现类
         * 给AccountMapper添加@Mapper注解
-        * 给方法加上@Insert("sql")注解,方法参数加上@Param("xxx")注解
+        * 给方法加上@Insert("sql语句")注解,方法参数加上@Param("xxx")注解
     * 编写service层代码
     * 构建一组restful api来展示
  
